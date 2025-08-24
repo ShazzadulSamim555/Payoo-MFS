@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Tailwind + DaisyUI -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <title>Payoo MFS</title>
+</head>
+
+<body class="min-h-screen bg-gray-100 flex flex-col items-center justify-center p-4">
+
+  <!-- Logo Section -->
+  <div class="w-72 h-32 bg-[url('./assets/bg.png')] bg-cover flex justify-center items-center rounded-xl">
+    <img src="./assets/Group.png" alt="Payoo Logo" class="w-24">
+  </div>
+
+  <!-- Login Form -->
+  <form class="w-full max-w-sm bg-white rounded-2xl p-6 mt-6 shadow">
+    <!-- Mobile Number -->
+    <label class="block font-semibold mb-2">Mobile Number</label>
+    <input type="text" placeholder="Enter Your Number"
+      class="input input-bordered w-full rounded-2xl bg-gray-100" />
+
+    <!-- Pin -->
+    <label class="block font-semibold mt-4 mb-2">4 Digit Pin</label>
+    <input type="password" maxlength="4" placeholder="Enter 4 Digit Pin"
+      class="input input-bordered w-full rounded-2xl bg-gray-100" />
+
+    <!-- Login Button -->
+    <button class="btn btn-primary w-full rounded-3xl mt-6">Login</button>
+  </form>
+
+  <!-- JS -->
+  <script src="./script.js"></script>
+</body>
+
+</html>
