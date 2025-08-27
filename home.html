@@ -10,27 +10,30 @@
     <title>Payoo MFS</title>
 </head>
 
-<body class="bg-blue-50 min-h-screen flex flex-col items-center">
-    <section class="w-full max-w-sm">
+<body class="bg-white min-h-screen flex flex-col items-center">
+    <section class="w-full max-w-sm bg-blue-50 p-2">
         <!-- Balance section -->
-        <header class="flex justify-between items-center bg-white p-5">
+        <header class="flex justify-between items-center bg-white p-5 rounded-t-xl">
             <div class="flex">
                 <div>
                     <img class="w-12" src="assets/Group.png" alt="">
                 </div>
                 <div>
-                    <h3 class="font-bold">$<span>4500</span></h3>
+                    <h3 class="font-bold">$<span id="current-balance">4500</span></h3>
                     <p class="text-xs text-gray-700">Available Balance</p>
                 </div>
             </div>
 
             <div>
-                <button class="btn">Log Out</button>
+                <button class="btn"><img class="w-5"
+                        src="https://img.icons8.com/?size=100&id=9p6VXsmLzvTt&format=png&color=000000" alt=""> Log
+                    Out</button>
             </div>
         </header>
 
         <hr>
 
+        <!-- Services section -->
         <main class="bg-white rounded-b-2xl px-5 py-6 flex flex-col gap-3">
             <div class="flex gap-1 items-center">
                 <img class="w-8" src="https://img.icons8.com/?size=96&id=houGsYyNpCbu&format=gif" alt="">
@@ -38,37 +41,129 @@
             </div>
 
             <div>
-                <p class="text-gray-700">Enjoy Easy and Convenient Financial Services With Us. Cashout Charge is Low and Many Many Offer.</p>
+                <p class="text-gray-700">Enjoy Easy and Convenient Financial Services With Us. Cashout Charge is Low and
+                    Many Many Offer.</p>
             </div>
 
             <div class="grid grid-cols-3 mx-auto gap-4">
-                <div class="text-center mx-auto border-1 border-gray-400 rounded-lg p-4">
+                <div id="add-money"
+                    class="text-center mx-auto border-1 border-gray-400 rounded-lg flex flex-col justify-center items-center p-3 w-full">
                     <img class="block mx-auto" src="assets/wallet1.png" alt="">
                     <p class="text-xs text-gray-700">Add Money</p>
                 </div>
-                <div class="text-center mx-auto border-1 border-gray-400 rounded-lg p-4">
-                    <img class="block mx-auto" src="assets/wallet1.png" alt="">
-                    <p class="text-xs text-gray-700">Add Money</p>
+                <div id="cash-out"
+                    class="text-center mx-auto border-1 border-gray-400 rounded-lg flex flex-col justify-center items-center p-3 w-full">
+                    <img class="block mx-auto" src="assets/send1.png" alt="">
+                    <p class="text-xs text-gray-700">Cashout</p>
                 </div>
-                <div class="text-center mx-auto border-1 border-gray-400 rounded-lg p-4">
-                    <img class="block mx-auto" src="assets/wallet1.png" alt="">
-                    <p class="text-xs text-gray-700">Add Money</p>
+                <div id="transfer-money"
+                    class="text-center mx-auto border-1 border-gray-400 rounded-lg flex flex-col justify-center items-center p-3 w-full">
+                    <img class="block mx-auto" src="assets/money1.png" alt="">
+                    <p class="text-xs text-gray-700">Transfer Money</p>
                 </div>
-                <div class="text-center mx-auto border-1 border-gray-400 rounded-lg p-4">
-                    <img class="block mx-auto" src="assets/wallet1.png" alt="">
-                    <p class="text-xs text-gray-700">Add Money</p>
+                <div id="get-bonus"
+                    class="text-center mx-auto border-1 border-gray-400 rounded-lg flex flex-col justify-center items-center p-3 w-full">
+                    <img class="block mx-auto" src="assets/bonus1.png" alt="">
+                    <p class="text-xs text-gray-700">Get Bonus</p>
                 </div>
-                <div class="text-center mx-auto border-1 border-gray-400 rounded-lg p-4">
-                    <img class="block mx-auto" src="assets/wallet1.png" alt="">
-                    <p class="text-xs text-gray-700">Add Money</p>
+                <div id="pay-bill"
+                    class="text-center mx-auto border-1 border-gray-400 rounded-lg flex flex-col justify-center items-center p-3 w-full">
+                    <img class="block mx-auto" src="assets/purse1.png" alt="">
+                    <p class="text-xs text-gray-700">Pay Bill</p>
                 </div>
-                <div class="text-center mx-auto border-1 border-gray-400 rounded-lg p-4">
-                    <img class="block mx-auto" src="assets/wallet1.png" alt="">
-                    <p class="text-xs text-gray-700">Add Money</p>
+                <div id="transaction"
+                    class="text-center mx-auto border-1 border-gray-400 rounded-lg flex flex-col justify-center items-center p-3 w-full">
+                    <img class="block mx-auto" src="assets/transaction1.png" alt="">
+                    <p class="text-xs text-gray-700">Transaction</p>
                 </div>
             </div>
         </main>
+
+        <footer>
+            <!-- Add money -->
+            <section id="addmoney-form" class="px-4 py-6 hidden">
+                <p class="font-bold mb-4">Add Money</p>
+                <form class="bg-white p-5 rounded-xl flex flex-col gap-5">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-3" for="">Select Bank</label>
+                        <select class="select rounded-xl w-full bg-blue-50">
+                            <option disabled selected class="text-gray-500">Select Bank</option>
+                            <option>Sonali Bank</option>
+                            <option>Jamuna Bank</option>
+                            <option>Dach Bangla Bank</option>
+                            <option>City Bank</option>
+                            <option value="">UCB Bank</option>
+                        </select>
+                    </div>
+                    <div>
+                        <p class="block text-sm font-bold text-gray-700 mb-3">Bank Account Number</p>
+                        <input id="account-num" class="input w-full rounded-xl bg-blue-50" type="text" required
+                            placeholder="Input 11 digit account number">
+                    </div>
+                    <div>
+                        <p class="block text-sm font-bold text-gray-700 mb-3">Amount to Add</p>
+                        <input id="add-amount" class="input w-full rounded-xl bg-blue-50" type="text" required
+                            placeholder="Add Amount to Withdrow">
+                    </div>
+                    <div>
+                        <p class="block text-sm font-bold text-gray-700 mb-3">Pin Number</p>
+                        <input id="add-pin" type="password" name="" class="input w-full rounded-xl bg-blue-50 " required
+                            placeholder="Input Bank PIN Number">
+                    </div>
+                    <button id="btn-addmoney" class="btn btn-primary rounded-xl">Add Money</button>
+                </form>
+            </section>
+
+            <!-- cash out section -->
+            <section id="cashout-form" class="px-4 py-6 hidden">
+                <p class="font-bold mb-4">Cash Out</p>
+                <form class="bg-white p-5 rounded-xl flex flex-col gap-5">
+                    <div>
+                        <p class="block text-sm font-bold text-gray-700 mb-3">Agent Number</p>
+                        <input id="agent-num" class="input w-full rounded-xl bg-blue-50" type="text" required
+                            placeholder="Input 11 digit agent number">
+                    </div>
+                    <div>
+                        <p class="block text-sm font-bold text-gray-700 mb-3">Amount</p>
+                        <input id="cashout-amount" class="input w-full rounded-xl bg-blue-50" type="text" required
+                            placeholder="Enter amount to withdraw">
+                    </div>
+                    <div>
+                        <p class="block text-sm font-bold text-gray-700 mb-3">PIN</p>
+                        <input id="cashout-pin" type="password" name="" class="input w-full rounded-xl bg-blue-50 "
+                            required placeholder="Input 4 digit PIN Number">
+                    </div>
+                    <button id="btn-cashout" class="btn btn-primary rounded-xl">Cash Out</button>
+                </form>
+            </section>
+
+            <!-- transferMoney section -->
+            <section id="transferMoney-form" class="px-4 py-6 hidden">
+                <p class="font-bold mb-4">Transfer Money</p>
+
+                <form class="bg-white p-5 flex flex-col gap-5 rounded-xl">
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-3" for="">User Account Number</label>
+                        <input id="account-number" class="input rounded-xl bg-blue-50 w-full" type="text" placeholder="Enter 11-digit Number">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-3" for="">Amount</label>
+                        <input id="transfer-amount" class="input rounded-xl bg-blue-50 w-full" type="text" placeholder="Enter Amount to Transfer">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-bold text-gray-700 mb-3" for="">PIN Number</label>
+                        <input id="pin-number" class="input rounded-xl bg-blue-50 w-full" type="password" placeholder="Enter 4-Digit PIN number">
+                    </div>
+
+                    <button id="btn-transferMoney" class="btn btn-primary rounded-xl">Transfer Money</button>
+                </form>
+            </section>
+        </footer>
     </section>
+
+    <script src="common.js"></script>
+    <!-- <script src="addMoneyCashOut.js"></script> -->
+    <!-- <script src="transfer.js"></script> -->
 </body>
 
 </html>

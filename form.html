@@ -11,6 +11,8 @@
 </head>
 
 <body class="bg-blue-50 min-h-screen flex flex-col items-center justify-center p-5">
+    <div id="alertBox" class="mt-4"></div>
+    
     <div>
         <div class="w-80 h-32 bg-[url('./assets/bg.png')] bg-cover flex justify-center items-center">
             <img class="max-w-16" src="assets/Group.png" alt="">
@@ -19,16 +21,19 @@
     <form class="bg-white p-5 rounded-lg w-full max-w-sm flex flex-col gap-5">
         <div>
             <label class="block font-bold" for="">Phone Number</label>
-            <input type="text" name="" id="" placeholder="Enter Phone Number" class="input rounded-xl w-full">
+            <input type="text" name="" id="phoneNumber" placeholder="Enter Phone Number" class="input rounded-xl w-full bg-blue-50">
         </div>
 
         <div>
             <label class="block font-bold" for="">PIN</label>
-            <input type="password" placeholder="4 digit PIN" class="input rounded-xl w-full">
+            <input id="pinNumber" type="password" placeholder="4 digit PIN" class="input rounded-xl w-full bg-blue-50">
         </div>
 
-        <button class="btn rounded-xl bg-blue-500 text-white font-bold border-none">Log In</button>
+        <button id="btn-log" class="btn rounded-xl bg-blue-500 text-white font-bold border-none">Log In</button>
     </form>
+
+
+    <script src="form.js"></script>
 </body>
 
 </html>
